@@ -4,6 +4,7 @@ WebViewer({
   }, document.getElementById('viewer'))
   .then(function(instance) {
 
+    // you can access docViewer object for low-level APIs
     const { docViewer } = instance;
 
     // now you can access APIs through this.webviewer.getInstance()
@@ -11,22 +12,19 @@ WebViewer({
     // see https://www.pdftron.com/documentation/web/guides/ui/apis for the full list of APIs
     
     // or listen to events from the viewer element
-    this.viewer.nativeElement.addEventListener('pageChanged', (e) => {
+    document.getElementById('viewer').addEventListener('pageChanged', (e) => {
       const [ pageNumber ] = e.detail;
       console.log(`Current page is ${pageNumber}`);
     });
 
     // or from the docViewer instance
-    instance.docViewer.on('annotationsLoaded', () => {
+    docViewer.on('annotationsLoaded', () => {
       console.log('annotations loaded');
     });
 
     docViewer.on('documentLoaded', function() {
-      // you can access docViewer object for low-level APIs
-      const docViewer = this.wvInstance;
-      const annotManager = this.wvInstance.annotManager;
       // and access classes defined in the WebViewer iframe
-      const { Annotations } = this.wvInstance;
+      const { Annotations, annotManager } = instance;
       const rectangle = new Annotations.RectangleAnnotation();
       rectangle.PageNumber = 1;
       rectangle.X = 100;
