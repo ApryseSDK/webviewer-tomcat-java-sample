@@ -37,7 +37,6 @@ Linux: `sudo apt install nodejs`
 Mac: `brew install node`
 
 ### Install WebViewer
-Note: If you are using windows, the following will only work on WSL (https://docs.microsoft.com/en-us/windows/wsl/about)
 
 ```
 npm install
