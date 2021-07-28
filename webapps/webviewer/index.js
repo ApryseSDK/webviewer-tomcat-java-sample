@@ -4,11 +4,11 @@ WebViewer({
   }, document.getElementById('viewer'))
   .then(function(instance) {
 
-    // you can access docViewer object for low-level APIs
-    const { docViewer } = instance;
+    // you can access documentViewer object for low-level APIs
+    const { documentViewer } = instance.Core;
 
     // now you can access APIs through this.webviewer.getInstance()
-    instance.openElements(['notesPanel']);
+    instance.UI.openElements(['notesPanel']);
     // see https://www.pdftron.com/documentation/web/guides/ui/apis for the full list of APIs
     
     // or listen to events from the viewer element
@@ -17,14 +17,14 @@ WebViewer({
       console.log(`Current page is ${pageNumber}`);
     });
 
-    // or from the docViewer instance
-    docViewer.on('annotationsLoaded', () => {
+    // or from the documentViewer instance
+    documentViewer.addEventListener('annotationsLoaded', () => {
       console.log('annotations loaded');
     });
 
-    docViewer.on('documentLoaded', function() {
+    documentViewer.addEventListener('documentLoaded', function() {
       // and access classes defined in the WebViewer iframe
-      const { Annotations, annotManager } = instance;
+      const { Annotations, annotationManager } = instance.Core;
       const rectangle = new Annotations.RectangleAnnotation();
       rectangle.PageNumber = 1;
       rectangle.X = 100;
@@ -32,9 +32,9 @@ WebViewer({
       rectangle.Width = 250;
       rectangle.Height = 250;
       rectangle.StrokeThickness = 5;
-      rectangle.Author = annotManager.getCurrentUser();
-      annotManager.addAnnotation(rectangle);
-      annotManager.drawAnnotations(rectangle.PageNumber);
+      rectangle.Author = annotationManager.getCurrentUser();
+      annotationManager.addAnnotation(rectangle);
+      annotationManager.drawAnnotations(rectangle.PageNumber);
       // see https://www.pdftron.com/api/web/WebViewer.html for the full list of low-level APIs
     });
 

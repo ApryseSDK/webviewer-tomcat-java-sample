@@ -27,7 +27,7 @@ Install the JDK.
 
 ```
 brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
+brew install --cask adoptopenjdk8
 ```
 
 ### Install Node.js
@@ -48,7 +48,7 @@ npm install
 npm start
 ```
 
-Navigate to http://localhost:8080/WebViewer.
+Navigate to http://localhost:8080/webviewer.
 
 ## Stop the app
 
