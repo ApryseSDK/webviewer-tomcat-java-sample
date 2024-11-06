@@ -1,4 +1,4 @@
-[WebViewer](https://www.pdftron.com/webviewer) is a powerful JavaScript-based PDF Library that's part of the [PDFTron PDF SDK](https://www.pdftron.com). It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.
+[WebViewer](https://docs.apryse.com/documentation/web/) is a powerful JavaScript-based PDF Library that's part of the [Apryse SDK](https://apryse.com/). It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.
 
 ![WebViewer UI](https://www.pdftron.com/downloads/pl/webviewer-ui.png)
 
@@ -12,7 +12,7 @@ Node and npm described below are just for convenient to downloading and installa
 
 ### Install Java
 
-Linux: 
+Linux:
 
 Install the JDK and JRE to recompile.
 
@@ -21,7 +21,7 @@ sudo apt-get install openjdk-8-jre
 sudo apt-get install openjdk-8-jdk
 ```
 
-Mac: 
+Mac:
 
 Install the JDK.
 
@@ -58,7 +58,7 @@ npm stop
 
 ## WebViewer APIs
 
-See [API documentation](https://www.pdftron.com/documentation/web/guides/ui/apis).
+See [API documentation](https://docs.apryse.com/api/web/WebViewerInstance.html).
 
 ## License
 
